@@ -1,6 +1,6 @@
 # Tornado Cash Privacy Solution [![Build Status](https://travis-ci.org/tornadocash/tornado-core.svg?branch=master)](https://travis-ci.org/tornadocash/tornado-core)
 
-Tornado Cash is a non-custodial Ethereum and ERC20 privacy solution based on zkSNARKs. It improves transaction privacy by breaking the on-chain link between recipient and destination addresses. It uses a smart contract that accepts ETH deposits that can be withdrawn by a different address. Whenever ETH is withdrawn by the new address, there is no way to link the withdrawal to the deposit, ensuring complete privacy.
+Tornado Cash is a non-custodial Ubiq and ERC20 privacy solution based on zkSNARKs. It improves transaction privacy by breaking the on-chain link between recipient and destination addresses. It uses a smart contract that accepts UBQ deposits that can be withdrawn by a different address. Whenever UBQ is withdrawn by the new address, there is no way to link the withdrawal to the deposit, ensuring complete privacy.
 
 To make a deposit user generates a secret and sends its hash (called a commitment) along with the deposit amount to the Tornado smart contract. The contract accepts the deposit and adds the commitment to its list of deposits.
 
@@ -57,18 +57,18 @@ Use with command line version with Ganache:
 ### ETHTornado
 1. `npm run migrate:dev`
 1. `./cli.js deposit`
-1. `./cli.js withdraw <note from previous step> <destination eth address>`
-1. `./cli.js balance <destination eth address>`
+1. `./cli.js withdraw <note from previous step> <destination UBQ address>`
+1. `./cli.js balance <destination UBQ address>`
 
 ### ERC20Tornado
 1. `npm run migrate:dev`
 1. `./cli.js depositErc20`
-1. `./cli.js withdrawErc20 <note from previous step> <destination eth address> <relayer eth address>`
-1. `./cli.js balanceErc20 <destination eth address> <relayer eth address>`
+1. `./cli.js withdrawErc20 <note from previous step> <destination UBQ address> <relayer UBQ address>`
+1. `./cli.js balanceErc20 <destination UBQ address> <relayer UBQ address>`
 
 If you want, you can point the app to existing tornado contracts on Mainnet or Kovan. It should work without any problems
 
-## Deploy ETH Tornado Cash
+## Deploy UBQ Tornado Cash
 1. `cp .env.example .env`
 1. Tune all necessary params
 1. `npx truffle migrate --network kovan --reset --f 2 --to 4`
@@ -79,7 +79,7 @@ If you want, you can point the app to existing tornado contracts on Mainnet or K
 1. `npx truffle migrate --network kovan --reset --f 2 --to 3`
 1. `npx truffle migrate --network kovan --reset --f 5`
 
-**Note**. If you want to reuse the same verifier for all the instances, then after you deployed one of the instances you should only run 4th or 5th migration for ETH or ERC20 contracts respectively (`--f 4 --to 4` or `--f 5`).
+**Note**. If you want to reuse the same verifier for all the instances, then after you deployed one of the instances you should only run 4th or 5th migration for UBQ or ERC20 contracts respectively (`--f 4 --to 4` or `--f 5`).
 
 ## Credits
 

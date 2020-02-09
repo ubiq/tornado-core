@@ -27,7 +27,7 @@ contract ERC20Tornado is Tornado {
   }
 
   function _processDeposit() internal {
-    require(msg.value == 0, "ETH value is supposed to be 0 for ERC20 instance");
+    require(msg.value == 0, "UBQ value is supposed to be 0 for ERC20 instance");
     _safeErc20TransferFrom(msg.sender, address(this), denomination);
   }
 

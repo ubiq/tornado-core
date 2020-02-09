@@ -34,7 +34,7 @@ function toHex(number, length = 32) {
 
 /** Display account balance */
 async function printBalance(account, name) {
-  console.log(`${name} ETH balance is`, web3.utils.fromWei(await web3.eth.getBalance(account)))
+  console.log(`${name} UBQ balance is`, web3.utils.fromWei(await web3.eth.getBalance(account)))
   console.log(`${name} Token Balance is`, web3.utils.fromWei(await erc20.methods.balanceOf(account).call()))
 }
 
@@ -50,7 +50,7 @@ function createDeposit(nullifier, secret) {
 }
 
 /**
- * Make an ETH deposit
+ * Make an UBQ deposit
  */
 async function deposit() {
   const deposit = createDeposit(rbigint(31), rbigint(31))
@@ -169,7 +169,7 @@ async function generateProof(contract, note, recipient, relayer = 0, fee = 0, re
 }
 
 /**
- * Do an ETH withdrawal
+ * Do an UBQ withdrawal
  * @param note Note to withdraw
  * @param recipient Recipient address
  */
@@ -195,7 +195,7 @@ async function withdrawErc20(note, recipient) {
 }
 
 /**
- * Do an ETH withdrawal through relay
+ * Do an UBQ withdrawal through relay
  * @param note Note to withdraw
  * @param recipient Recipient address
  * @param relayUrl Relay url address
@@ -323,7 +323,7 @@ async function init() {
 /** Print command line help */
 function printHelp(code = 0) {
   console.log(`Usage:
-  Submit a deposit from default eth account and return the resulting note
+  Submit a deposit from default UBQ account and return the resulting note
   $ ./cli.js deposit
   $ ./cli.js depositErc20
 

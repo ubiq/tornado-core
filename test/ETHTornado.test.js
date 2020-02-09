@@ -479,7 +479,7 @@ contract('ETHTornado', accounts => {
         toFixedHex(input.refund)
       ]
       const error = await tornado.withdraw(proof, ...args, { from: relayer }).should.be.rejected
-      error.reason.should.be.equal('Refund value is supposed to be zero for ETH instance')
+      error.reason.should.be.equal('Refund value is supposed to be zero for UBQ instance')
     })
   })
 

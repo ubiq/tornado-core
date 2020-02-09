@@ -103,7 +103,7 @@ contract('ERC20Tornado', accounts => {
       await token.approve(tornado.address, tokenDenomination)
 
       let error = await tornado.deposit(commitment, { from: sender, value: 1e6 }).should.be.rejected
-      error.reason.should.be.equal('ETH value is supposed to be 0 for ERC20 instance')
+      error.reason.should.be.equal('UBQ value is supposed to be 0 for ERC20 instance')
     })
   })
 

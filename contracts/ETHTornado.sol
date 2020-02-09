@@ -23,13 +23,13 @@ contract ETHTornado is Tornado {
   }
 
   function _processDeposit() internal {
-    require(msg.value == denomination, "Please send `mixDenomination` ETH along with transaction");
+    require(msg.value == denomination, "Please send `mixDenomination` UBQ along with transaction");
   }
 
   function _processWithdraw(address payable _recipient, address payable _relayer, uint256 _fee, uint256 _refund) internal {
     // sanity checks
-    require(msg.value == 0, "Message value is supposed to be zero for ETH instance");
-    require(_refund == 0, "Refund value is supposed to be zero for ETH instance");
+    require(msg.value == 0, "Message value is supposed to be zero for UBQ instance");
+    require(_refund == 0, "Refund value is supposed to be zero for UBQ instance");
 
     (bool success, ) = _recipient.call.value(denomination - _fee)("");
     require(success, "payment to _recipient did not go thru");

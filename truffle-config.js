@@ -61,13 +61,16 @@ module.exports = {
       skipDryRun: true
     },
     mainnet: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'http://ethereum-rpc.trustwalletapp.com'),
-      network_id: 1,
+      //provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://rpc.octano.dev'),
+      host: "127.0.0.1",
+      port: 8588,             // Custom port
+      network_id: 88,
+      websockets: false,       // Enable EventEmitter interface for web3 (default: false)
       gas: 6000000,
-      gasPrice: utils.toWei('2', 'gwei'),
-      // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true
+      gasPrice: utils.toWei('20', 'gwei'),
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: false
     },
 
     // Useful for private networks
@@ -93,7 +96,7 @@ module.exports = {
           enabled: true,
           runs: 200
         },
-        // evmVersion: "byzantium"
+        evmVersion: "byzantium"
       }
     }
   }

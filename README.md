@@ -33,7 +33,7 @@ During the audit no critical issues were found and all outstanding issues were f
 Underlying circomlib dependency is currently being audited, and the team already published most of the fixes for found issues
 
 ## Requirements
-1. `node v11.15.0`
+1. `node v12+`
 2. `npm install -g npx`
 
 ## Usage
